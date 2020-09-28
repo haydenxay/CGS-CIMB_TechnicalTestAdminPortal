@@ -28,20 +28,20 @@ namespace CGS_CIMB_TechnicalTestAdminPortal.Controllers
             return datareport;
         }
 
-        public static ReportsDTO GetDataReports(string id)
-        {
-            HttpClientHandler hndlr = new HttpClientHandler();
-            hndlr.UseDefaultCredentials = true;
-            var client = new HttpClient(hndlr) { BaseAddress = new Uri(Baseurl) };
+        //public static ReportsDTO GetDataReports(string id)
+        //{
+        //    HttpClientHandler hndlr = new HttpClientHandler();
+        //    hndlr.UseDefaultCredentials = true;
+        //    var client = new HttpClient(hndlr) { BaseAddress = new Uri(Baseurl) };
 
-            client.BaseAddress = new Uri(Baseurl);
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            HttpResponseMessage response = client.GetAsync("Reports").Result;
-            var stringData = response.Content.ReadAsStreamAsync().Result;
-            var datareport = JsonConvert.DeserializeObject<ReportsDTO>(stringData);
+        //    client.BaseAddress = new Uri(Baseurl);
+        //    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+        //    HttpResponseMessage response = client.GetAsync("Reports").Result;
+        //    var stringData = response.Content.ReadAsStreamAsync().Result;
+        //    var datareport = JsonConvert.DeserializeObject<ReportsDTO>(stringData);
 
-            return datareport;
-        }
+        //    return datareport;
+        //}
 
     }
 }
